@@ -9,7 +9,7 @@ require('dotenv').config();
 
 // connection to DB and cloudinary
 const { connectDB } = require('./config/database');
-const { cloudinaryConnect } = require('./config/cloudinary');
+// const { cloudinaryConnect } = require('./config/cloudinary');
 
 // routes
 const userRoutes = require('./routes/user');
@@ -38,13 +38,9 @@ app.use(
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Server Started on PORT ${PORT}`);
-});
 
 // connections
-connectDB();
-cloudinaryConnect();
+// cloudinaryConnect();
 
 // mount route
 app.use('/api/v1/auth', userRoutes);
@@ -59,7 +55,11 @@ app.use('/api/v1/course', courseRoutes);
 app.get('/', (req, res) => {
     // console.log('Your server is up and running..!');
     res.send(`<div>
-    This is Default Route  
-    <p>Everything is OK</p>
-    </div>`);
-})
+        This is Default Route  
+        <p>Everything is OK</p>
+        </div>`);
+    })
+    app.listen(PORT, () => {
+        connectDB();
+        console.log(`Server Started on PORT ${PORT}`);
+    });

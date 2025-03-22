@@ -4,7 +4,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
-import { sendOtp } from "../../../services/operations/authAPI"
+import { sendOtp, signUp } from "../../../services/operations/authAPI"
 import { setSignupData } from "../../../slices/authSlice"
 import { ACCOUNT_TYPE } from "../../../utils/constants"
 import Tab from "../../common/Tab"
@@ -44,7 +44,6 @@ function SignupForm() {
   // Handle Form Submission
   const handleOnSubmit = (e) => {
     e.preventDefault();
-
     if (password !== confirmPassword) {
       toast.error("Passwords Do Not Match")
       return;
@@ -53,13 +52,13 @@ function SignupForm() {
       ...formData,
       accountType,
     };
-
+    
     // Setting signup data to state
     // To be used after otp verification
     dispatch(setSignupData(signupData));
     // Send OTP to user for verification
-    dispatch(sendOtp(formData.email, navigate));
-
+    // dispatch(sendOtp(formData.email, navigate));
+    
     // Reset form data
     setFormData({
       firstName: "",
@@ -69,6 +68,7 @@ function SignupForm() {
       confirmPassword: "",
     })
     setAccountType(ACCOUNT_TYPE.STUDENT);
+    signUp(accountType, firstName, lastName, email, password, confirmPassword)
   };
 
   // data to pass to Tab component

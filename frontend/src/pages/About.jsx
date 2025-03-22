@@ -34,8 +34,8 @@ const About = () => {
               initial='hidden'
               whileInView={'show'}
               viewport={{ once: false, amount: 0.1 }}
-            > Driving Innovation in Online Education for a
-              <HighlightText text={"Brighter Future"} />
+            > Innovation in Online Education for a brighter future with
+              <HighlightText text={"Coding Bits"} />
             </motion.p>
 
             <motion.p
@@ -44,9 +44,9 @@ const About = () => {
               whileInView={'show'}
               viewport={{ once: false, amount: 0.1 }}
               className="mx-auto mt-3 text-center text-base font-medium text-richblack-300 lg:w-[95%]">
-              Studynotion is at the forefront of driving innovation in online
+              Coding Bits is at the forefront of driving innovation in online
               education. We're passionate about creating a brighter future by
-              offering cutting-edge courses, leveraging emerging technologies,
+              offering cutting-edge courses, offering mentorship,
               and nurturing a vibrant learning community.
             </motion.p>
           </motion.header>
@@ -81,20 +81,10 @@ const About = () => {
                 Our Founding Story
               </h1>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-                Our e-learning platform was born out of a shared vision and
-                passion for transforming education. It all began with a group of
-                educators, technologists, and lifelong learners who recognized
-                the need for accessible, flexible, and high-quality learning
-                opportunities in a rapidly evolving digital world.
+              Coding Bits is an ISO-certified company founded by Adarsh Kumar Pandey whose vision is to deliver industry-ready learning programs. The services offered include live online courses and tutoring, test preparation, professional development, and career counseling. Practical training in the field of web development, Android development, data structures, algorithms, and full-stack development is also provided.
               </p>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-                As experienced educators ourselves, we witnessed firsthand the
-                limitations and challenges of traditional education systems. We
-                believed that education should not be confined to the walls of a
-                classroom or restricted by geographical boundaries. We
-                envisioned a platform that could bridge these gaps and empower
-                individuals from all walks of life to unlock their full
-                potential.
+              Coding Bits aspires to be the bridge that closes the gap between what quality of education is and what industry expects by providing learners with a learning environment through which they can grow towards self-sufficiency and career growth. They want to help their learners attain professional goals through the development of continuous, work-based skills with practical exposure.
               </p>
             </motion.div>
 
@@ -119,10 +109,10 @@ const About = () => {
               </h1>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
                 With this vision in mind, we set out on a journey to create an
-                e-learning platform that would revolutionize the way people
+                learning platform that would revolutionize the way people
                 learn. Our team of dedicated experts worked tirelessly to
-                develop a robust and intuitive platform that combines
-                cutting-edge technology with engaging content, fostering a
+                develop a robust and intuitive environment that combines
+                mentorship with engaging content, fostering a
                 dynamic and interactive learning experience.
               </p>
             </div>
@@ -132,7 +122,7 @@ const About = () => {
                 Our Mission
               </h1>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-                Our mission goes beyond just delivering courses online. We wanted to create a vibrant community of learners, where individuals can connect, collaborate, and learn from one another. We believe that knowledge thrives in an environment of sharing and dialogue, and we foster this spirit of collaboration through forums, live sessions, and networking opportunities.
+                Our mission goes beyond just delivering courses. We wanted to create a vibrant community of learners, where individuals can connect, collaborate,learn from one another and consult our mentors.
               </p>
             </div>
           </div>

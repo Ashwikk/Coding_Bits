@@ -46,12 +46,12 @@ export function sendOtp(email, navigate) {
 }
 
 // ================ sign Up ================
-export function signUp(accountType, firstName, lastName, email, password, confirmPassword, otp, navigate) {
-  return async (dispatch) => {
-
-    const toastId = toast.loading("Loading...");
-    dispatch(setLoading(true));
+export async function signUp (accountType, firstName, lastName, email, password, confirmPassword, navigate) {
+    
+    // const toastId = toast.loading("Loading...");
+    // dispatch(setLoading(true));
     try {
+      console.log("Hello")
       const response = await apiConnector("POST", SIGNUP_API, {
         accountType,
         firstName,
@@ -59,7 +59,6 @@ export function signUp(accountType, firstName, lastName, email, password, confir
         email,
         password,
         confirmPassword,
-        otp,
       })
 
       // console.log("SIGNUP API RESPONSE --> ", response);
@@ -68,17 +67,16 @@ export function signUp(accountType, firstName, lastName, email, password, confir
         throw new Error(response.data.message);
       }
 
-      toast.success("Signup Successful");
-      navigate("/login");
+      // toast.success("Signup Successful");
+      // navigate("/login");
     } catch (error) {
       console.log("SIGNUP API ERROR --> ", error);
       // toast.error(error.response.data.message);
       toast.error("Invalid OTP");
       // navigate("/signup")
     }
-    dispatch(setLoading(false))
-    toast.dismiss(toastId)
-  }
+    // dispatch(setLoading(false))
+    // toast.dismiss(toastId)
 }
 
 

@@ -70,20 +70,20 @@ exports.sendOTP = async (req, res) => {
 
 
 // ================ SIGNUP ================
-exports.signup = async (req, res) => {
+exports.signup = async (req,res) => {
     try {
         // extract data 
         const { firstName, lastName, email, password, confirmPassword,
-            accountType, contactNumber, otp } = req.body;
-
-        // validation
-        if (!firstName || !lastName || !email || !password || !confirmPassword || !accountType || !otp) {
-            return res.status(401).json({
-                success: false,
-                message: 'All fields are required..!'
-            });
-        }
-
+            accountType, contactNumber } = req.body;
+            // validation
+            if (!firstName || !lastName || !email || !password || !confirmPassword || !accountType) {
+                return res.status(401).json({
+                    success: false,
+                    message: 'All fields are required..!'
+                });
+            }
+            
+            console.log("Hello")
         // check both pass matches or not
         if (password !== confirmPassword) {
             return res.status(400).json({
@@ -104,7 +104,7 @@ exports.signup = async (req, res) => {
         }
 
         // find most recent otp stored for user in DB
-        const recentOtp = await OTP.findOne({ email }).sort({ createdAt: -1 }).limit(1);
+        // const recentOtp = await OTP.findOne({ email }).sort({ createdAt: -1 }).limit(1);
         // console.log('recentOtp ', recentOtp)
 
         // .sort({ createdAt: -1 }): 
@@ -115,18 +115,18 @@ exports.signup = async (req, res) => {
 
 
         // if otp not found
-        if (!recentOtp || recentOtp.length == 0) {
-            return res.status(400).json({
-                success: false,
-                message: 'Otp not found in DB, please try again'
-            });
-        } else if (otp !== recentOtp.otp) {
-            // otp invalid
-            return res.status(400).json({
-                success: false,
-                message: 'Invalid Otp'
-            })
-        }
+        // if (true) {
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: 'Otp not found in DB, please try again'
+        //     });
+        // } else{
+        //     // otp invalid
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: 'Invalid Otp'
+        //     })
+        // }
 
         // hash - secure passoword
         let hashedPassword = await bcrypt.hash(password, 10);
@@ -181,14 +181,12 @@ exports.login = async (req, res) => {
 
         // check user is registered and saved data in DB
         let user = await User.findOne({ email }).populate('additionalDetails');
-
         if (!user) {
             return res.status(401).json({
                 success: false,
                 message: 'You are not registered with us'
             });
         }
-
 
         // comapare given password and saved password from DB
         if (await bcrypt.compare(password, user.password)) {
@@ -197,9 +195,10 @@ exports.login = async (req, res) => {
                 id: user._id,
                 accountType: user.accountType // This will help to check whether user have access to route, while authorzation
             };
-
+            
+            console.log("Here",password,user.password)
             // Generate token 
-            const token = jwt.sign(payload, process.env.JWT_SECRET, {
+            const token = jwt.sign(payload, "codingBits", {
                 expiresIn: "24h",
             });
 

@@ -3,21 +3,23 @@ const nodemailer = require('nodemailer');
 const mailSender = async (email, title, body) => {
     try {
         const transporter = nodemailer.createTransport({
-            host: process.env.MAIL_HOST,
+            host: smtp.gmail.com,
+            port: 587,               // Make sure you add the port for SMTP
+            secure: false,
             auth: {
-                user: process.env.MAIL_USER,
-                pass: process.env.MAIL_PASS
+                user: "ashwrathe@gmail.com",
+                pass: "khtfshjilykzvzwj"
             }
         });
-
+        console.log(transporter)
         const info = await transporter.sendMail({
-            from: 'StudyNotion || by Aniruddha Gade',
+            from: 'CodingBits || by Ashwikk Patel <ashwrathe@gmail.com>',
             to: email,
             subject: title,
             html: body
         });
 
-        // console.log('Info of sent mail - ', info);
+        console.log('Info of sent mail - ', info);
         return info;
     }
     catch (error) {

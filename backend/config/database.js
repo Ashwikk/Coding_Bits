@@ -2,18 +2,16 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 
-exports.connectDB = () => {
-    mongoose.connect(process.env.DATABASE_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-        .then(() => {
-            console.log('Database connected succcessfully');
-        })
-        .catch(error => {
-            console.log(`Error while connecting server with Database`);
-            console.log(error);
-            process.exit(1);
-        })
+exports.connectDB = async () => {
+    try {
+        await mongoose.connect("mongodb+srv://ashwrathe123:ashwikk%40123@cluster0.lm3ij.mongodb.net/CodingBits")
+
+        console.log('Database connected succcessfully');
+
+    } catch (err) {
+        console.log(`Error while connecting server with Database`);
+        console.log(err.message);
+        process.exit(1);
+    }
 };
 

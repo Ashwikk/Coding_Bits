@@ -101,8 +101,18 @@ exports.showAllCategories = async (req, res) => {
 // ================ Get Category Page Details ================
 exports.getCategoryPageDetails = async (req, res) => {
     try {
-        const { categoryId } = req.body
-        // console.log("PRINTING CATEGORY ID: ", categoryId);
+        let { categoryId } = req.body
+        console.log("PRINTING CATEGORY ID:"+categoryId);
+
+        // Check if the category exists
+        // const selectedCategory1 = await Category.findById(categoryId);
+        // console.log('Category before population:', selectedCategory1);
+
+        // const selectedCategory2 = await Category.findById(categoryId)
+        // .populate("courses")
+        // .exec();
+        // console.log('selectedCategory with courses populated = ', selectedCategory2);
+
 
         // Get courses for the specified category
         const selectedCategory = await Category.findById(categoryId)
@@ -121,6 +131,8 @@ exports.getCategoryPageDetails = async (req, res) => {
         }
 
 
+        console.log(selectedCategory.courses.length);
+        
 
         // Handle the case when there are no courses
         if (selectedCategory.courses.length === 0) {
@@ -137,6 +149,9 @@ exports.getCategoryPageDetails = async (req, res) => {
             _id: { $ne: categoryId },
         })
 
+        console.log("DATA SCIENCE "+categoriesExceptSelected);
+        
+
         let differentCategory = await Category.findOne(
             categoriesExceptSelected[getRandomInt(categoriesExceptSelected.length)]
                 ._id
@@ -147,7 +162,7 @@ exports.getCategoryPageDetails = async (req, res) => {
             })
             .exec()
 
-        //console.log("Different COURSE", differentCategory)
+        // console.log("Different COURSE", differentCategory)
         // Get top-selling courses across all categories
         const allCategories = await Category.find()
             .populate({
@@ -160,6 +175,8 @@ exports.getCategoryPageDetails = async (req, res) => {
             .exec()
 
         const allCourses = allCategories.flatMap((category) => category.courses)
+        console.log(allCourses);
+        
         const mostSellingCourses = allCourses
             .sort((a, b) => b.sold - a.sold)
             .slice(0, 10)

@@ -123,7 +123,7 @@ const Home = () => {
                         className='text-center text-3xl lg:text-4xl font-semibold mt-7  '
                     >
                         Empower Your Future with
-                        <HighlightText text={"Coding Skills"} />
+                        <HighlightText text={"Coding Bits"} />
                     </motion.div>
 
                     <motion.div
@@ -133,7 +133,7 @@ const Home = () => {
                         viewport={{ once: false, amount: 0.1 }}
                         className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-300'
                     >
-                        With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.
+                        With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, mentor sessions, and personalized feedback from instructors.
                     </motion.div>
 
 
@@ -162,7 +162,7 @@ const Home = () => {
                                 </div>
                             }
                             subheading={
-                                "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
+                                "Our courses are designed and taught by experts having experience in coding and are passionate about sharing their knowledge with you."
                             }
                             ctabtn1={
                                 {
@@ -263,7 +263,7 @@ const Home = () => {
 
                             <div className='flex flex-col gap-10 w-full lg:w-[40%] items-start'>
                                 <div className='text-[16px]'>
-                                    The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
+                                    The modern Coding Bits dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
                                 </div>
                                 <CTAButton active={true} linkto={"/signup"}>
                                     <div>
@@ -288,14 +288,14 @@ const Home = () => {
                 <div className='mt-14 w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
                     <InstructorSection />
 
-                    {/* Reviws from Other Learner */}
+                    Reviws from Other Learner */
                     <h1 className="text-center text-3xl lg:text-4xl font-semibold mt-8 flex justify-center items-center gap-x-3">
                         Reviews from other learners <MdOutlineRateReview className='text-yellow-25' />
                     </h1>
                     <ReviewSlider />
                 </div>
 
-                {/*Footer */}
+                /*Footer
                 <Footer />
             </div >
         </React.Fragment>

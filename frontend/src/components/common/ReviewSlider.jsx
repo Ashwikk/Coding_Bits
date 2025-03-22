@@ -92,7 +92,6 @@ function ReviewSlider() {
                       </h2>
                     </div>
                   </div>
-
                   <p className="font-medium text-richblack-25">
                     {review?.review.split(" ").length > truncateWords
                       ? `${review?.review

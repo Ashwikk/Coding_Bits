@@ -28,7 +28,10 @@ const { getAllStudents, getAllInstructors } = require('../controllers/profile');
 // ********************************************************************************************************
 
 // Route for user signup
-router.post('/signup', signup);
+router.post('/signup',
+
+    signup
+);
 
 // Route for user login
 router.post('/login', login);

@@ -174,21 +174,21 @@ const Footer = () => {
 
           <div className="text-center flex flex-col sm:flex-row ">
             <div className="flex ">
-              <span> Made with ❤️</span>
+              <span> Designed by   </span>
 
-              <Link to='https://github.com/Aniruddha-Gade' target="__blank" className="text-white hover:underline mr-1"
+              <Link to='https://github.com/Ashwikk' target="__blank" className="text-white hover:underline mr-1"
               >
-                Aniruddha Gade
+                "Ashwikk Patel"
               </Link>
             </div>
-            <span> © 2023 Studynotion</span>
+            <span> © 2024 CodingBits</span>
           </div>
 
           <div className="flex items-center">
-            <a href="https://www.linkedin.com/in/aniruddha-gade-a48800231/" className="text-white p-3 hover:bg-richblack-700 rounded-full duration-300" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/ashwikk-patel/" className="text-white p-3 hover:bg-richblack-700 rounded-full duration-300" target="_blank" rel="noopener noreferrer">
               <ImLinkedin2 size={17} />
             </a>
-            <a href="https://www.github.com/Aniruddha-Gade" className="text-white p-3 hover:bg-richblack-700 rounded-full duration-300" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Ashwikk" className="text-white p-3 hover:bg-richblack-700 rounded-full duration-300" target="_blank" rel="noopener noreferrer">
               <ImGithub size={17} />
             </a>
           </div>

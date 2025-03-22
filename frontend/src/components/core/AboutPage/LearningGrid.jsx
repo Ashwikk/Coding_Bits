@@ -8,7 +8,7 @@ const LearningGridArray = [
     heading: "World-Class Learning for",
     highlightText: "Anyone, Anywhere",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
+      "Coding Bits partners with various universities across country to bring flexible, affordable, job-relevant online learning to individuals",
     BtnText: "Learn More",
     BtnLink: "/",
   },
@@ -16,31 +16,31 @@ const LearningGridArray = [
     order: 1,
     heading: "Curriculum Based on Industry Needs",
     description:
-      "Save time and money! The Belajar curriculum is made to be easier to understand and in line with industry needs.",
+      "Our courses are designed to meet current industry demands, equipping you with the skills employers seek",
   },
   {
     order: 2,
     heading: "Our Learning Methods",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Experience hands-on, practical learning with real-world projects and expert mentorship.",
   },
   {
     order: 3,
     heading: "Certification",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Earn industry-recognized certifications that validate your skills and boost your career prospects",
   },
   {
     order: 4,
-    heading: `Rating "Auto-grading"`,
+    heading: `Rating`,
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Join us as learners and rate our courses and mentorship programs",
   },
   {
     order: 5,
     heading: "Ready to Work",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Learn from our programs to get job-ready, with the expertise and confidence to excel in your career.",
   },
 ];
 

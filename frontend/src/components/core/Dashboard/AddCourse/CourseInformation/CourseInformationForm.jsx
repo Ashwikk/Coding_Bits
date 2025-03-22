@@ -61,7 +61,6 @@ export default function CourseInformationForm() {
       currentValues.coursePrice !== course.price ||
       currentValues.courseTags.toString() !== course.tag.toString() ||
       currentValues.courseBenefits !== course.whatYouWillLearn ||
-      currentValues.courseCategory._id !== course.category._id ||
       currentValues.courseRequirements.toString() !== course.instructions.toString() ||
       currentValues.courseImage !== course.thumbnail) {
       return true
@@ -78,7 +77,7 @@ export default function CourseInformationForm() {
       // console.log("changes after editing form values:", currentValues)
       // console.log("now course:", course)
       // console.log("Has Form Changed:", isFormUpdated())
-      if (isFormUpdated()) {
+      if (true) {
         const currentValues = getValues()
         const formData = new FormData()
         // console.log('data -> ',data)
@@ -92,15 +91,8 @@ export default function CourseInformationForm() {
         if (currentValues.coursePrice !== course.price) {
           formData.append("price", data.coursePrice)
         }
-        if (currentValues.courseTags.toString() !== course.tag.toString()) {
-          formData.append("tag", JSON.stringify(data.courseTags))
-          // formData.append("tag", data.courseTags)
-        }
         if (currentValues.courseBenefits !== course.whatYouWillLearn) {
           formData.append("whatYouWillLearn", data.courseBenefits)
-        }
-        if (currentValues.courseCategory._id !== course.category._id) {
-          formData.append("category", data.courseCategory)
         }
         if (currentValues.courseRequirements.toString() !== course.instructions.toString()) {
           formData.append("instructions", JSON.stringify(data.courseRequirements))
@@ -128,9 +120,7 @@ export default function CourseInformationForm() {
     formData.append("courseName", data.courseTitle)
     formData.append("courseDescription", data.courseShortDesc)
     formData.append("price", data.coursePrice)
-    formData.append("tag", JSON.stringify(data.courseTags))
     formData.append("whatYouWillLearn", data.courseBenefits)
-    formData.append("category", data.courseCategory)
     formData.append("status", COURSE_STATUS.DRAFT)
     formData.append("instructions", JSON.stringify(data.courseRequirements))
     formData.append("thumbnailImage", data.courseImage)
@@ -211,8 +201,8 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
-
-      {/* Course Category */}
+{/* 
+      Course Category
       <div className="flex flex-col space-y-2 ">
         <label className="text-sm text-richblack-5" htmlFor="courseCategory">
           Course Category <sup className="text-pink-200">*</sup>
@@ -238,17 +228,17 @@ export default function CourseInformationForm() {
             Course Category is required
           </span>
         )}
-      </div>
+      </div> */}
 
       {/* Course Tags */}
-      <ChipInput
+      {/* <ChipInput
         label="Tags"
         name="courseTags"
         placeholder="Enter Tags and press Enter or Comma"
         register={register}
         errors={errors}
         setValue={setValue}
-      />
+      /> */}
 
       {/* Course Thumbnail Image */}
       <Upload
@@ -279,13 +269,13 @@ export default function CourseInformationForm() {
       </div>
 
       {/* Requirements/Instructions */}
-      <RequirementsField
+      {/* <RequirementsField
         name="courseRequirements"
         label="Requirements/Instructions"
-        register={register}
+        register={register}0000000000000000000000000000000000000000000000000000000
         setValue={setValue}
         errors={errors}
-      />
+      /> */}
 
       {/* Next Button */}
       <div className="flex justify-end gap-x-2">
